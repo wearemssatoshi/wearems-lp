@@ -943,11 +943,35 @@
         }
 
         /* ═══ SERVICE SUMMARY ═══ */
+        .section-dark {
+            background: var(--navy);
+        }
+
+        .section-dark .section-label {
+            color: var(--gold);
+        }
+
+        .section-dark .summary-item {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-dark .summary-num {
+            color: var(--gold);
+        }
+
+        .section-dark .summary-item h4 {
+            color: #fff;
+        }
+
+        .section-dark .summary-item p {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         .service-summary {
             display: flex;
             flex-direction: column;
             gap: 0;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .summary-item {
@@ -1589,10 +1613,9 @@
     </section>
 
     <!-- ═══ SERVICE SUMMARY ═══ -->
-    <section class="section section-warm">
+    <section class="section section-dark">
         <div class="section-inner">
             <p class="section-label">All Services</p>
-            <h2 class="section-title">WEAREMS の 6つの「for」</h2>
             <div class="service-summary fade-in">
                 <div class="summary-item">
                     <span class="summary-num">01</span>
