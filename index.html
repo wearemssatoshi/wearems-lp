@@ -1214,6 +1214,11 @@
             font-style: italic;
         }
 
+
+        .dx-section img {
+            display: block;
+            margin: 24px auto 0;
+        }
         /* ═══ DX DATA (Glassmorphism) ═══ */
         .dx-section {
             padding: 40px 20px;
@@ -1278,41 +1283,6 @@
         }
 
         /* ═══ CTA CONIC BORDER ═══ */
-        .cta-box {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--r-xl);
-        }
-
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: conic-gradient(from 0deg, transparent 60%, var(--gold) 75%, var(--gold-warm) 85%, transparent 100%);
-            animation: rotate-conic 6s linear infinite;
-        }
-
-        .cta-box-inner {
-            position: relative;
-            z-index: 1;
-            background: var(--navy);
-            border-radius: calc(var(--r-xl) - 3px);
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        @keyframes rotate-conic {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
     </style>
 </head>
 
@@ -1381,6 +1351,7 @@
             <p class="section-label">The Problem</p>
             <h2 class="section-title">進化する世界<br>停滞するニッポン</h2>
             <p class="section-desc">この現実こそが、私たちが動く理由です。</p>
+            <img src="img/dx-problem.png" alt="進化する世界と停滞するニッポンの対比" style="width:100%;max-width:700px;border-radius:var(--r-lg);margin-top:24px;box-shadow:var(--shadow-lg);">
         </div>
         <div class="section-inner dx-grid">
             <div class="dx-card fade-in">
