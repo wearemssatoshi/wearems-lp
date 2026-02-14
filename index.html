@@ -423,9 +423,9 @@
         .hero-cta {
             margin-top: 32px;
             display: inline-flex;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-warm) 100%);
-            border: none;
-            color: #fff;
+            background: none;
+            border: 2px solid var(--gold);
+            color: var(--gold);
             padding: 16px 40px;
             font-size: 14px;
             font-weight: 600;
@@ -433,13 +433,14 @@
             text-decoration: none;
             font-family: var(--font-ja);
             letter-spacing: 1px;
-            box-shadow: 0 4px 20px rgba(184, 134, 11, 0.3);
             transition: all 0.3s var(--ease);
         }
 
         .hero-cta:hover {
+            background: var(--gold);
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.4);
+            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.3);
         }
 
         .num-value {
