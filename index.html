@@ -1336,7 +1336,7 @@
                 <div class="tool-card">
                     <span class="tool-badge">LIVE TOOL</span>
                     <h3>SNS Image Resizer</h3>
-                    <p>写真を各SNSの推奨サイズに変換できます。Instagram、X、Facebookに対応しています。</p>
+                    <p>写真を各SNSの推奨サイズに変換できます。とても簡単なので、ぜひ体験してみてください。</p>
                     <div class="resizer-app">
                         <input type="file" id="resizerInput" accept="image/*" class="resizer-input">
                         <div class="resizer-sizes" id="resizerSizes">
@@ -1347,6 +1347,8 @@
                             <button class="size-chip" data-w="1080"
                                 data-h="1920">IGストーリー<br><small>1080×1920</small></button>
                             <button class="size-chip" data-w="1200" data-h="675">X投稿<br><small>1200×675</small></button>
+                            <button class="size-chip" data-w="1500" data-h="500"
+                                data-icon="true">Xヘッダー<br><small>1500×500</small></button>
                             <button class="size-chip" data-w="1200"
                                 data-h="630">FB共有<br><small>1200×630</small></button>
                         </div>
@@ -1497,6 +1499,32 @@
             else { sw = currentImage.width; sh = sw / canR; sx = 0; sy = (currentImage.height - sh) / 2; }
             ctx.drawImage(currentImage, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
 
+            // Xヘッダー: アイコン安全エリアガイド表示
+            const activeChip = document.querySelector('.size-chip.active');
+            if (activeChip && activeChip.dataset.icon === 'true') {
+                const iconR = 134; // Xアイコン半径（px）
+                const iconX = 100 + iconR; // 左端からの位置
+                const iconY = canvas.height - 10; // 下端
+                // 半透明の薄暗いオーバーレイ円
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(iconX, iconY, iconR, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0,0,0,0.25)';
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,0.7)';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([6, 4]);
+                ctx.stroke();
+                ctx.restore();
+                // ラベル
+                ctx.save();
+                ctx.font = '14px Inter, sans-serif';
+                ctx.fillStyle = 'rgba(255,255,255,0.9)';
+                ctx.textAlign = 'center';
+                ctx.fillText('アイコン', iconX, iconY - 20);
+                ctx.restore();
+            }
+
             resizerPreview.innerHTML = '';
             const img = document.createElement('img');
             img.src = canvas.toDataURL('image/jpeg', 0.9);
@@ -1506,6 +1534,9 @@
             info.className = 'resizer-info';
             info.style.marginTop = '8px';
             info.textContent = `${currentSize.w} × ${currentSize.h}px`;
+            if (activeChip && activeChip.dataset.icon === 'true') {
+                info.textContent += '　⚠ 左下にアイコンが重なります';
+            }
             resizerPreview.appendChild(info);
 
             const dl = document.createElement('a');
