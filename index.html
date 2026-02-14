@@ -17,8 +17,9 @@
     <!-- Favicon -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>W</text></svg>">
+    <link rel="apple-touch-icon" href="img/hero-bg.png">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@200;300;400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -1204,6 +1205,114 @@
                 padding: 60px 20px;
             }
         }
+
+
+        .testimonial-author {
+            font-size: 11px;
+            color: var(--text-3);
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* ═══ DX DATA (Glassmorphism) ═══ */
+        .dx-section {
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .dx-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dx-card {
+            position: relative;
+            flex: 1;
+            min-width: 260px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            border-top: 1px solid rgba(184, 134, 11, 0.25);
+            border-left: 1px solid rgba(184, 134, 11, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--r-lg);
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(184, 134, 11, 0.06);
+            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+
+        .dx-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(184, 134, 11, 0.12);
+        }
+
+        .dx-value {
+            font-family: var(--font-en);
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .dx-value span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .dx-label {
+            font-family: var(--font-ja);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-1);
+            margin-top: 8px;
+        }
+
+        .dx-source {
+            font-family: var(--font-ja);
+            font-size: 10px;
+            color: var(--text-3);
+            margin-top: 4px;
+        }
+
+        /* ═══ CTA CONIC BORDER ═══ */
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--r-xl);
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: conic-gradient(from 0deg, transparent 60%, var(--gold) 75%, var(--gold-warm) 85%, transparent 100%);
+            animation: rotate-conic 6s linear infinite;
+        }
+
+        .cta-box-inner {
+            position: relative;
+            z-index: 1;
+            background: var(--navy);
+            border-radius: calc(var(--r-xl) - 3px);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        @keyframes rotate-conic {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -1253,15 +1362,8 @@
         <p class="hero-eyebrow">WEAREMS for Skill Sharing</p>
         <h1>すべてのひとに、<br>すべての<span class="gold">SKILL</span>を。</h1>
         <p class="hero-philosophy">
-            そのSKILLが、自分と社会の「痛み」をやわらげる
+            飲食25年 × 最新AI — あなたのビジネスを、次のステージへ
         </p>
-        <span class="hero-notification">
-            <svg viewBox="0 0 24 24">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-            </svg>
-            その抵抗感は、未来からのシグナル
-        </span>
         <div class="hero-services">
             <span class="hero-chip"><span class="dot"></span>Restaurant Innovation</span>
             <span class="hero-chip"><span class="dot"></span>Communities</span>
@@ -1272,6 +1374,39 @@
         <a href="https://docs.google.com/forms/d/19RC-3upa9qIhNNVrablV3C43GrbSuMFx3PDKAg-HOJE/viewform" class="hero-cta"
             target="_blank">30分相談無料 — まずはご相談ください →</a>
     </section>
+
+    <!-- ═══ DX DATA ═══ -->
+    <section class="section dx-section">
+        <div class="section-inner">
+            <p class="section-label">The Problem</p>
+            <h2 class="section-title">進化する世界<br>停滞するニッポン</h2>
+            <p class="section-desc">この現実こそが、私たちが動く理由です。</p>
+        </div>
+        <div class="section-inner dx-grid">
+            <div class="dx-card fade-in">
+                <div class="dx-value">15<span>%</span></div>
+                <div class="dx-label">飲食店のDX成功実感率</div>
+                <div class="dx-source">飲食店.com調べ（2025）</div>
+            </div>
+            <div class="dx-card fade-in">
+                <div class="dx-value">30<span>位</span></div>
+                <div class="dx-label">日本のデジタル競争力</div>
+                <div class="dx-source">IMD調べ / 69カ国中（2025）</div>
+            </div>
+            <div
+                style="flex: 1; min-width: 260px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; text-align: center;">
+                <div style="font-family: var(--font-en); font-size: 42px; font-weight: 900; color: var(--gold);">
+                    19.1<span style="font-size: 16px; font-weight: 400;">%</span>
+                </div>
+                <div
+                    style="font-family: var(--font-ja); font-size: 15px; font-weight: 600; color: var(--text-1); margin-top: 8px;">
+                    AI普及率（30カ国中最下位圏）</div>
+                <div style="font-family: var(--font-ja); font-size: 10px; color: var(--text-3); margin-top: 4px;">
+                    Microsoft & LinkedIn調べ（2025）</div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ═══ NUMBERS ═══ -->
     <section class="numbers fade-in">
@@ -1294,48 +1429,6 @@
                 <div class="num-value"><span class="count" data-target="5">0</span><span class="num-unit">領域</span>
                 </div>
                 <div class="num-label">スキルシェア</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ DX DATA ═══ -->
-    <section class="section" style="padding: 40px 20px;">
-        <div class="section-inner">
-            <p class="section-label">The Problem</p>
-            <h2 class="section-title">進化する世界<br>停滞するニッポン</h2>
-            <p class="section-desc">この現実こそが、私たちが動く理由です。</p>
-        </div>
-        <div class="section-inner"
-            style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
-            <div
-                style="flex: 1; min-width: 260px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; text-align: center;">
-                <div style="font-family: var(--font-en); font-size: 42px; font-weight: 900; color: var(--gold);">15<span
-                        style="font-size: 16px; font-weight: 400;">%</span></div>
-                <div
-                    style="font-family: var(--font-ja); font-size: 15px; font-weight: 600; color: var(--text-1); margin-top: 8px;">
-                    飲食店のDX成功実感率</div>
-                <div style="font-family: var(--font-ja); font-size: 10px; color: var(--text-3); margin-top: 4px;">
-                    飲食店.com調べ（2025）</div>
-            </div>
-            <div
-                style="flex: 1; min-width: 260px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; text-align: center;">
-                <div style="font-family: var(--font-en); font-size: 42px; font-weight: 900; color: var(--gold);">30<span
-                        style="font-size: 16px; font-weight: 400;">位</span></div>
-                <div
-                    style="font-family: var(--font-ja); font-size: 15px; font-weight: 600; color: var(--text-1); margin-top: 8px;">
-                    日本のデジタル競争力</div>
-                <div style="font-family: var(--font-ja); font-size: 10px; color: var(--text-3); margin-top: 4px;">IMD調べ
-                    / 69カ国中（2025）</div>
-            </div>
-            <div
-                style="flex: 1; min-width: 260px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; text-align: center;">
-                <div style="font-family: var(--font-en); font-size: 42px; font-weight: 900; color: var(--gold);">19.1<span style="font-size: 16px; font-weight: 400;">%</span>
-                </div>
-                <div
-                    style="font-family: var(--font-ja); font-size: 15px; font-weight: 600; color: var(--text-1); margin-top: 8px;">
-                    AI普及率（30カ国中最下位圏）</div>
-                <div style="font-family: var(--font-ja); font-size: 10px; color: var(--text-3); margin-top: 4px;">
-                    Microsoft & LinkedIn調べ（2025）</div>
             </div>
         </div>
     </section>
@@ -1625,18 +1718,22 @@
                     <p class="testimonial-text">「自分たちのイベントでAIでつくった音楽が流れた時、お客様もスタッフも感動しました。まさか自分たちの音楽が楽しめるとは思ってもみなかったです」
                     </p>
                     <span class="testimonial-tag">for Entertainment</span>
+                    <div class="testimonial-author">— イベント企画担当者</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">「全曲オリジナル楽曲でのイベントを実施できました。他のお店では絶対にできない体験。お客様の反応が全く違いました」</p>
                     <span class="testimonial-tag">for Entertainment</span>
+                    <div class="testimonial-author">— 飲食店 店長</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">「飲食店の業務がこんなに自動化できるなんて。今まで「なんとなく」でやっていたことが、データで見える化されて、経営が変わりました」</p>
                     <span class="testimonial-tag">for Restaurant Innovation</span>
+                    <div class="testimonial-author">— 飲食店オーナー</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">「自分でLPを制作できました！デザインシステムもあるので、統一感のあるブランディングがすぐにできて、本当に驚きました」</p>
                     <span class="testimonial-tag">for Communities</span>
+                    <div class="testimonial-author">— コミュニティ運営者</div>
                 </div>
             </div>
         </div>
@@ -1646,10 +1743,12 @@
     <section class="section" id="contact">
         <div class="section-inner">
             <div class="cta-box fade-in">
-                <h2>ともに、創りませんか</h2>
-                <p>つくりたかったもの。やってみたかったこと。<br>一緒にチャレンジしませんか？<br><strong style="font-size:16px;">30分相談無料</strong></p>
-                <a href="https://docs.google.com/forms/d/19RC-3upa9qIhNNVrablV3C43GrbSuMFx3PDKAg-HOJE/viewform"
-                    class="cta-btn" target="_blank">まずはご相談ください →</a>
+                <div class="cta-box-inner">
+                    <h2>ともに、創りませんか</h2>
+                    <p>つくりたかったもの。やってみたかったこと。<br>一緒にチャレンジしませんか？<br><strong style="font-size:16px;">30分相談無料</strong></p>
+                    <a href="https://docs.google.com/forms/d/19RC-3upa9qIhNNVrablV3C43GrbSuMFx3PDKAg-HOJE/viewform"
+                        class="cta-btn" target="_blank">まずはご相談ください →</a>
+                </div>
             </div>
         </div>
     </section>
