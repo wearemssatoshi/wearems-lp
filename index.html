@@ -902,6 +902,46 @@
             line-height: 1.6;
         }
 
+        /* ═══ SERVICE SUMMARY ═══ */
+        .service-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-num {
+            font-family: var(--font-en);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .summary-item h4 {
+            font-family: var(--font-en);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-1);
+            margin-bottom: 4px;
+        }
+
+        .summary-item p {
+            font-family: var(--font-ja);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-2);
+        }
+
         /* ═══ CTA ═══ */
         .cta-box {
             text-align: center;
@@ -910,6 +950,25 @@
             border-radius: var(--r-2xl);
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/cta-bg.png') center/cover no-repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .cta-box>* {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-box h2 {
@@ -1403,6 +1462,51 @@
                 <p>つくりたかったもの。やってみたかったこと。<br>一緒にチャレンジしませんか？<br><strong style="font-size:16px;">30分相談無料</strong></p>
                 <a href="https://docs.google.com/forms/d/19RC-3upa9qIhNNVrablV3C43GrbSuMFx3PDKAg-HOJE/viewform"
                     class="cta-btn" target="_blank">まずはご相談ください →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICE SUMMARY ═══ -->
+    <section class="section section-warm">
+        <div class="section-inner">
+            <p class="section-label">All Services</p>
+            <h2 class="section-title">WEAREMS の 5つの「for」</h2>
+            <div class="service-summary fade-in">
+                <div class="summary-item">
+                    <span class="summary-num">01</span>
+                    <div>
+                        <h4>for Restaurant Innovation</h4>
+                        <p>飲食業に特化したAI Transformation & プロデュース</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-num">02</span>
+                    <div>
+                        <h4>for Communities</h4>
+                        <p>コミュニティ専用アプリの企画・制作 & AI活用</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-num">03</span>
+                    <div>
+                        <h4>for Entertainment</h4>
+                        <p>SNS運用・映像編集・音楽クリエイト</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-num">04</span>
+                    <div>
+                        <h4>for Wine School</h4>
+                        <p>ワインを知って、人生を豊かに</p>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-num">05</span>
+                    <div>
+                        <h4>for Blockchain</h4>
+                        <p>トークンエコノミクス & NFTプロジェクト</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
