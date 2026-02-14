@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEAREMS for Skill Sharing — すべてのひとに、すべてのSKILLを。</title>
     <meta name="description"
-        content="WEAREMS for Skill Sharing — レストランイノベーション、コミュニティ、エンターテインメント、ワインスクール、ブロックチェーンの5つの領域でSKILLをシェアします">
+        content="WEAREMS for Skill Sharing — レストランイノベーション、コミュニティ、エンターテインメント、ワインスクール、ブロックチェーン、そしてあなたのための6つの領域でSKILLをシェアします">
+    <!-- OGP -->
+    <meta property="og:title" content="WEAREMS for Skill Sharing — すべてのひとに、すべてのSKILLを。">
+    <meta property="og:description" content="レストランイノベーション、コミュニティ、エンターテインメント、ワインスクール、ブロックチェーン、6つのforであなたのプロジェクトを支援します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wearemssatoshi.github.io/wearems-lp/">
+    <meta property="og:image" content="https://wearemssatoshi.github.io/wearems-lp/img/hero-bg.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>W</text></svg>">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Noto+Sans+JP:wght@200;300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -401,7 +411,14 @@
             text-align: center;
         }
 
-        .num-item {}
+        .num-item {
+            text-align: center;
+        }
+
+        .hero-cta {
+            margin-top: 32px;
+            display: inline-flex;
+        }
 
         .num-value {
             font-family: var(--font-en);
@@ -942,6 +959,48 @@
             color: var(--text-2);
         }
 
+        /* ═══ TESTIMONIALS ═══ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            transition: all 0.3s var(--ease);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-ja);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-1);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-tag {
+            font-family: var(--font-en);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--gold);
+        }
+
+        @media (max-width: 600px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ═══ CTA ═══ */
         .cta-box {
             text-align: center;
@@ -1163,6 +1222,8 @@
             <span class="hero-chip"><span class="dot"></span>Wine School</span>
             <span class="hero-chip"><span class="dot"></span>Blockchain</span>
         </div>
+        <a href="https://docs.google.com/forms/d/19RC-3upa9qIhNNVrablV3C43GrbSuMFx3PDKAg-HOJE/viewform"
+            class="cta-btn hero-cta" target="_blank">30分相談無料 — まずはご相談ください →</a>
     </section>
 
     <!-- ═══ NUMBERS ═══ -->
@@ -1458,6 +1519,35 @@
                     <div class="step-num">04</div>
                     <div class="step-title">運用サポート</div>
                     <div class="step-desc">リリース後も<br>継続的に伴走します</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section class="section" id="voices">
+        <div class="section-inner">
+            <p class="section-label">Voices</p>
+            <h2 class="section-title">お客様の声</h2>
+            <p class="section-desc">WEAREMSの「for」を体験した方々の声です。</p>
+
+            <div class="testimonials-grid fade-in">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「自分たちのイベントでAIでつくった音楽が流れた時、お客様もスタッフも感動しました。まさか自分たちの音楽が楽しめるとは思ってもみなかったです」
+                    </p>
+                    <span class="testimonial-tag">for Entertainment</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「全曲オリジナル楽曲でのイベントを実施できました。他のお店では絶対にできない体験。お客様の反応が全く違いました」</p>
+                    <span class="testimonial-tag">for Entertainment</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「飲食店の業務がこんなに自動化できるなんて。今まで「なんとなく」でやっていたことが、データで見える化されて、経営が変わりました」</p>
+                    <span class="testimonial-tag">for Restaurant Innovation</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「自分でLPを制作できました！デザインシステムもあるので、統一感のあるブランディングがすぐにできて、本当に驚きました」</p>
+                    <span class="testimonial-tag">for Communities</span>
                 </div>
             </div>
         </div>
