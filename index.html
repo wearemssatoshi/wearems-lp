@@ -1215,10 +1215,50 @@
         }
 
 
-        .dx-section img {
-            display: block;
-            margin: 24px auto 0;
+        .dx-hero-overlay {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
+
+        .dx-hero-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            object-fit: cover;
+        }
+
+        .dx-hero-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(10, 15, 30, 0.3) 0%, rgba(10, 15, 30, 0.75) 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .dx-hero-text .section-label {
+            color: var(--gold);
+        }
+
+        .dx-hero-text .section-title {
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .dx-hero-text .section-desc {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
         /* ═══ DX DATA (Glassmorphism) ═══ */
         .dx-section {
             padding: 40px 20px;
@@ -1347,11 +1387,13 @@
 
     <!-- ═══ DX DATA ═══ -->
     <section class="section dx-section">
-        <div class="section-inner">
-            <p class="section-label">The Problem</p>
-            <h2 class="section-title">進化する世界<br>停滞するニッポン</h2>
-            <p class="section-desc">この現実こそが、私たちが動く理由です。</p>
-            <img src="img/dx-problem.png" alt="進化する世界と停滞するニッポンの対比" style="width:100%;max-width:700px;border-radius:var(--r-lg);margin-top:24px;box-shadow:var(--shadow-lg);">
+        <div class="dx-hero-overlay fade-in">
+            <img src="img/dx-problem.png" alt="進化する世界と停滞するニッポンの対比" class="dx-hero-img">
+            <div class="dx-hero-text">
+                <p class="section-label">The Problem</p>
+                <h2 class="section-title">進化する世界<br>停滞するニッポン</h2>
+                <p class="section-desc">この現実こそが、私たちが動く理由です。</p>
+            </div>
         </div>
         <div class="section-inner dx-grid">
             <div class="dx-card fade-in">
